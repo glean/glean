@@ -1,0 +1,3 @@
+module Glean
+  VERSION = '0.0.1'
+end

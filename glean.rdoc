@@ -1,0 +1,5 @@
+= glean
+
+Generate this with
+    glean rdoc
+After you have described your command line interface
