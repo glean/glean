@@ -15,7 +15,7 @@ module Glean
     end
 
     def download!
-      Git.clone("https://github.com/#{identifier}", identifier, :path => storage_path)
+      Git.clone("http://github.com/#{identifier}", identifier, :path => storage_path)
     end
 
     def each_datum
