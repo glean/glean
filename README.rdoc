@@ -1,6 +1,0 @@
-= glean
-
-Describe your project here
-
-:include:glean.rdoc
-
