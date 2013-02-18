@@ -41,7 +41,6 @@ arg_name 'dataset_identifier'
 command :get do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
-    dataset.download!
   end
 end
 

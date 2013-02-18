@@ -4,6 +4,7 @@ module Glean
 
     def initialize(identifier)
       @identifier = identifier
+      sync
     end
 
     def storage_path
@@ -14,8 +15,13 @@ module Glean
       File.join(storage_path, identifier)
     end
 
-    def download!
-      Git.clone("http://github.com/#{identifier}", identifier, :path => storage_path)
+    def sync
+      begin
+        g = Git.open(path)
+        g.pull
+      rescue
+        Git.clone("http://github.com/#{identifier}", identifier, :path => storage_path)
+      end
     end
 
     def each
