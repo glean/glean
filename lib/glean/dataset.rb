@@ -18,7 +18,7 @@ module Glean
       Git.clone("http://github.com/#{identifier}", identifier, :path => storage_path)
     end
 
-    def each_datum
+    def each
       Dir.glob(File.join(path, "*")) do |d|
         yield Datum.new(d)
       end
