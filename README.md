@@ -1,7 +1,6 @@
-# Glean
-## A data management tool for humans
+# Glean - A data management tool for humans
 
-### Command line
+## Command line
 ```
 NAME
     glean - A data management tool for humans
@@ -25,7 +24,7 @@ COMMANDS
     search - Describe search here
 ```
 
-### Rails
+## Rails
 
 Gemfile:
 ```ruby
@@ -40,6 +39,6 @@ countries.each do |country|
 end
 ```
 
-### Other Frameworks
+## Other Frameworks
 
-I'm not sure how you'd do it, but I want to make it easy. Open an issue, or better yet drop some code in a Pull Request
+I'm not sure how you'd do it, but I want to make it easy. Open an issue, or better yet drop some code in a Pull Request.
