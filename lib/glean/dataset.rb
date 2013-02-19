@@ -16,6 +16,7 @@ module Glean
     end
 
     def sync
+      Dir.mkdir(storage_path) unless File.exists?(storage_path)
       begin
         g = Git.open(path)
         g.pull
