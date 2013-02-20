@@ -2,13 +2,14 @@ module Glean
   class Dataset
     attr_reader :identifier
 
-    def initialize(identifier)
+    def initialize(identifier, dir="~")
       @identifier = identifier
+      @dir = dir
       sync
     end
 
     def storage_path
-      File.join(File.expand_path("~"), ".glean")
+      File.join(File.expand_path(@dir), ".glean")
     end
 
     def path
