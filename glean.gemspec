@@ -20,4 +20,5 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency('aruba')
   s.add_runtime_dependency('gli','2.5.4')
   s.add_runtime_dependency('git','1.2.5')
+  s.add_runtime_dependency('toml', '0.0.3')
 end

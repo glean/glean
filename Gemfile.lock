@@ -1,9 +1,10 @@
 PATH
   remote: .
   specs:
-    glean (0.0.3)
+    glean (0.0.6)
       git (= 1.2.5)
       gli (= 2.5.4)
+      toml (= 0.0.3)
 
 GEM
   remote: http://rubygems.org/
@@ -12,6 +13,7 @@ GEM
       childprocess (~> 0.3.6)
       cucumber (>= 1.1.1)
       rspec-expectations (>= 2.7.0)
+    blankslate (2.1.2.4)
     builder (3.1.4)
     childprocess (0.3.8)
       ffi (~> 1.0, >= 1.0.11)
@@ -27,11 +29,15 @@ GEM
     git (1.2.5)
     gli (2.5.4)
     json (1.7.7)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
+    toml (0.0.3)
+      parslet
 
 PLATFORMS
   ruby
