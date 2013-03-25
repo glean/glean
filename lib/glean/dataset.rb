@@ -27,23 +27,9 @@ module Glean
     end
 
     def each
-      Dir.glob(File.join(path, "*")) do |d|
-        yield directory_hash(d)
+      Dir.glob(File.join(path, "**/*.toml")) do |f|
+        yield TOML.load_file(f)
       end
-    end
-
-    def directory_hash(path)
-      data = {}
-      Dir.foreach(path) do |entry|
-        next if (entry == '..' || entry == '.')
-        full_path = File.join(path, entry)
-        if File.directory?(full_path)
-          data[entry.to_sym] = directory_hash(full_path)
-        else
-          data[entry.to_sym] = File.read(full_path).chomp
-        end
-      end
-      return data
     end
   end
 end
