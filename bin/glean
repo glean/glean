@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'gli'
 require 'glean'
+require 'base64'
 
 include GLI::App
 
@@ -51,6 +52,19 @@ command :out do |c|
     dataset = Glean::Dataset.new(args[0])
     dataset.each_datum do |datum|
       puts datum
+    end
+  end
+end
+
+desc 'Show information'
+arg_name 'dataset_identifier'
+command :info do |c|
+  c.action do |global_options,options,args|
+    begin
+      readme = Octokit.readme("glean/#{args[0]}")
+      puts Base64.decode64(readme.content)
+    rescue
+      puts "No extended information available"
     end
   end
 end
