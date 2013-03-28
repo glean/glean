@@ -55,6 +55,16 @@ command :out do |c|
   end
 end
 
+desc 'Search for datasets'
+arg_name 'dataset_identifier'
+command :search do |c|
+  c.action do |global_options,options,args|
+    Octokit.organization_repositories('glean').each do |repo|
+      puts "#{repo.name} -- #{repo.description}" unless repo.name =~ /^glean.*$/
+    end
+  end
+end
+
 pre do |global,command,options,args|
   # Pre logic here
   # Return true to proceed; false to abort and not call the
