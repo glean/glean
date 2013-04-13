@@ -9,14 +9,6 @@ program_desc 'A data management tool for humans'
 
 version Glean::VERSION
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
-
 desc 'Download a dataset by name'
 arg_name 'dataset_identifier'
 command :get do |c|
