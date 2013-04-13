@@ -40,7 +40,7 @@ module Glean
 
     def each
       Dir.glob(File.join(path, "**", "*.toml")) do |f|
-        yield TOML.load_file(f)
+        yield Hashie::Mash.new(TOML.load_file(f))
       end
     end
   end
