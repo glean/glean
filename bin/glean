@@ -28,7 +28,7 @@ command :out do |c|
   end
 end
 
-desc 'Show information'
+desc 'Show dataset information'
 arg_name 'dataset_identifier'
 command :info do |c|
   c.action do |global_options,options,args|
