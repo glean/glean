@@ -32,13 +32,8 @@ desc 'Show dataset information'
 arg_name '<dataset>'
 command :info do |c|
   c.action do |global_options,options,args|
-    identifier = Glean::Dataset.resolve_identifier(args[0])
-    begin
-      readme = Octokit.readme(identifier)
-      puts Base64.decode64(readme.content)
-    rescue
-      puts "No extended information available"
-    end
+    identifier = Glean::Source.resolve_identifier(args[0])
+    puts Glean::Source.info(identifier)
   end
 end
 
@@ -46,8 +41,8 @@ desc 'Search for datasets'
 arg_name '<query>'
 command :search do |c|
   c.action do |global_options,options,args|
-    Octokit.organization_repositories('glean').each do |repo|
-      puts "#{repo.name} -- #{repo.description}" unless repo.name =~ /^glean.*$/
+    Glean::Source.search(args[0]).each do |datasource|
+      puts "#{datasource.name} -- #{datasource.description}"
     end
   end
 end
