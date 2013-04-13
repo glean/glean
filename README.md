@@ -9,19 +9,18 @@ SYNOPSIS
     glean [global options] command [command options] [arguments...]
 
 VERSION
-    0.0.3
+    0.0.12
 
 GLOBAL OPTIONS
-    -f, --flagname=The name of the argument - Describe some flag here (default: the default)
-    --help                                  - Show this message
-    -s, --[no-]switch                       - Describe some switch here
-    --version                               - 
+    --help    - Show this message
+    --version - 
 
 COMMANDS
+    export - Export a dataset
     get    - Download a dataset by name
     help   - Shows a list of commands or help for one command
-    out    - Describe out here
-    search - Describe search here
+    info   - Show dataset information
+    search - Search for datasets
 ```
 
 ## Rails
@@ -36,7 +35,7 @@ db/seeds.rb:
 if Country.count == 0
   countries = Glean::Dataset.new('glean/countries')
   countries.each do |country|
-    Country.create :name => country[:name], :code => country[:code]
+    Country.create :name => country.name, :code => country.code
   end
 end
 ```
