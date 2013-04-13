@@ -9,59 +9,32 @@ program_desc 'A data management tool for humans'
 
 version Glean::VERSION
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
-
-desc 'Describe search here'
-arg_name 'Describe arguments to search here'
-command :search do |c|
-  c.desc 'Describe a switch to search'
-  c.switch :s
-
-  c.desc 'Describe a flag to search'
-  c.default_value 'default'
-  c.flag :f
-  c.action do |global_options,options,args|
-
-    # Your command logic here
-     
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
-    puts "search command ran"
-  end
-end
-
 desc 'Download a dataset by name'
-arg_name 'dataset_identifier'
+arg_name "<dataset> [<path>]"
 command :get do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
   end
 end
 
-desc 'Describe out here'
-arg_name 'Describe arguments to out here'
-command :out do |c|
+desc 'Export a dataset'
+arg_name '<dataset>'
+command :export do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
-    dataset.each_datum do |datum|
+    dataset.each do |datum|
       puts datum
     end
   end
 end
 
-desc 'Show information'
-arg_name 'dataset_identifier'
+desc 'Show dataset information'
+arg_name '<dataset>'
 command :info do |c|
   c.action do |global_options,options,args|
+    identifier = Glean::Dataset.resolve_identifier(args[0])
     begin
-      readme = Octokit.readme("glean/#{args[0]}")
+      readme = Octokit.readme(identifier)
       puts Base64.decode64(readme.content)
     rescue
       puts "No extended information available"
@@ -70,7 +43,7 @@ command :info do |c|
 end
 
 desc 'Search for datasets'
-arg_name 'dataset_identifier'
+arg_name '<query>'
 command :search do |c|
   c.action do |global_options,options,args|
     Octokit.organization_repositories('glean').each do |repo|

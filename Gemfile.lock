@@ -4,6 +4,7 @@ PATH
     glean (0.0.9)
       git (= 1.2.5)
       gli (= 2.5.4)
+      hashie (= 2.0.3)
       octokit (= 1.24.0)
       toml (= 0.0.3)
 
