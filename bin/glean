@@ -17,26 +17,6 @@ default_value 'the default'
 arg_name 'The name of the argument'
 flag [:f,:flagname]
 
-desc 'Describe search here'
-arg_name 'Describe arguments to search here'
-command :search do |c|
-  c.desc 'Describe a switch to search'
-  c.switch :s
-
-  c.desc 'Describe a flag to search'
-  c.default_value 'default'
-  c.flag :f
-  c.action do |global_options,options,args|
-
-    # Your command logic here
-     
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
-    puts "search command ran"
-  end
-end
-
 desc 'Download a dataset by name'
 arg_name 'dataset_identifier'
 command :get do |c|
