@@ -11,7 +11,6 @@ spec = Gem::Specification.new do |s|
   s.files = `git ls-files`.split($/)
   s.require_paths << 'lib'
   s.has_rdoc = true
-  s.extra_rdoc_files = ['README.rdoc','glean.rdoc']
   s.rdoc_options << '--title' << 'glean' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
   s.executables << 'glean'
