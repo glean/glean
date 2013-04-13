@@ -5,6 +5,7 @@ PATH
       git (= 1.2.5)
       gli (= 2.5.4)
       hashie (= 2.0.3)
+      json (= 1.7.7)
       octokit (= 1.24.0)
       toml (= 0.0.3)
 
@@ -31,6 +32,7 @@ GEM
       guard (>= 1.1)
       rspec (~> 2.11)
     hashie (2.0.3)
+    json (1.7.7)
     listen (0.7.3)
     lumberjack (1.0.3)
     method_source (0.8.1)
