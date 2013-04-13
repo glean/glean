@@ -1,5 +1,7 @@
 require 'glean/version'
+require 'glean/glean'
 require 'glean/dataset'
+require 'glean/source'
 
 require 'git'
 require 'toml'
