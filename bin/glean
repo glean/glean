@@ -10,26 +10,26 @@ program_desc 'A data management tool for humans'
 version Glean::VERSION
 
 desc 'Download a dataset by name'
-arg_name 'dataset_identifier'
+arg_name "<dataset> [<path>]"
 command :get do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
   end
 end
 
-desc 'Describe out here'
-arg_name 'Describe arguments to out here'
-command :out do |c|
+desc 'Export a dataset'
+arg_name '<dataset>'
+command :export do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
-    dataset.each_datum do |datum|
+    dataset.each do |datum|
       puts datum
     end
   end
 end
 
 desc 'Show dataset information'
-arg_name 'dataset_identifier'
+arg_name '<dataset>'
 command :info do |c|
   c.action do |global_options,options,args|
     begin
@@ -42,7 +42,7 @@ command :info do |c|
 end
 
 desc 'Search for datasets'
-arg_name 'dataset_identifier'
+arg_name '<query>'
 command :search do |c|
   c.action do |global_options,options,args|
     Octokit.organization_repositories('glean').each do |repo|
