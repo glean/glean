@@ -32,8 +32,9 @@ desc 'Show dataset information'
 arg_name '<dataset>'
 command :info do |c|
   c.action do |global_options,options,args|
+    identifier = Glean::Dataset.resolve_identifier(args[0])
     begin
-      readme = Octokit.readme("glean/#{args[0]}")
+      readme = Octokit.readme(identifier)
       puts Base64.decode64(readme.content)
     rescue
       puts "No extended information available"
