@@ -2,16 +2,8 @@ module Glean
   class Dataset
     attr_reader :identifier
 
-    def self.resolve_identifier(identifier)
-      if identifier.include?("/")
-        identifier
-      else
-        "glean/#{identifier}"
-      end
-    end
-
     def initialize(identifier, dir="~")
-      @identifier = Dataset.resolve_identifier(identifier)
+      @identifier = Glean::Source.resolve_identifier(identifier)
       @dir = dir
       sync
     end

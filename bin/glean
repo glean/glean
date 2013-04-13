@@ -32,7 +32,7 @@ desc 'Show dataset information'
 arg_name '<dataset>'
 command :info do |c|
   c.action do |global_options,options,args|
-    identifier = Glean::Dataset.resolve_identifier(args[0])
+    identifier = Glean::Source.resolve_identifier(args[0])
     begin
       readme = Octokit.readme(identifier)
       puts Base64.decode64(readme.content)
