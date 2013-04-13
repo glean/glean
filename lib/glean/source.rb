@@ -8,6 +8,10 @@ module Glean
       end
     end
 
+    def self.search(query)
+      (Core.search(query) + Contrib.search(query) + User.search(query)).sort
+    end
+
     def self.info(identifier)
       readme = Octokit.readme(identifier)
       Base64.decode64(readme.content)
