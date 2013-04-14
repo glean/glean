@@ -3,6 +3,7 @@ require 'glean/dataset'
 
 require 'glean/formatter'
 require 'glean/formatter/JSON'
+require 'glean/formatter/YAML'
 
 require 'glean/source'
 require 'glean/source/core'

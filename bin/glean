@@ -26,7 +26,7 @@ command :export do |c|
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
     dataset.each do |datum|
-      formatter = Glean::Formatter.format(options[:format].downcase)
+      formatter = Glean::Formatter.format(options[:format])
       puts formatter.format(datum)
     end
   end
