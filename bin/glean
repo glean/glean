@@ -20,10 +20,14 @@ end
 desc 'Export a dataset'
 arg_name '<dataset>'
 command :export do |c|
+  c.desc 'Set the export format'
+  c.default_value "json"
+  c.flag [:f,:format], :type => String, :must_match => Glean::Formatter.available_formatters
   c.action do |global_options,options,args|
     dataset = Glean::Dataset.new(args[0])
     dataset.each do |datum|
-      puts datum
+      formatter = Glean::Formatter.format(options[:format])
+      puts formatter.format(datum)
     end
   end
 end
