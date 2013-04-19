@@ -9,7 +9,7 @@ module Glean
     end
 
     def self.search(query)
-      (Core.search(query) + Contrib.search(query) + User.search(query)).sort
+      (Core.search(query) + Contrib.search(query) + User.search(query)).sort { |a, b| a.name <=> b.name }
     end
 
     def self.info(identifier)
