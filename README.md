@@ -22,6 +22,14 @@ Glean datasets are available from three distinct sources:
   * Contrib - Available via search (using --contrib)
   * User - Directly available via URL
 
+## Installation
+```
+$ gem install glean
+```
+
+__Requirements:__
+* Git
+
 ## Command line
 ```
 $ glean help
