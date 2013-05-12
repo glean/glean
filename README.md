@@ -93,6 +93,10 @@ if Country.count == 0
 end
 ```
 
+```
+$ rake db:seed
+```
+
 ## Other Frameworks
 
 I'm not sure how you'd do it, but I want to make it easy. Open an issue, or better yet drop some code in a Pull Request.
