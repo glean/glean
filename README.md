@@ -9,8 +9,9 @@ Data is stored in the human readable data format, [TOML](https://github.com/mojo
 Glean datasets are available from three distinct sources:
 
 * [Core](http://github.com/glean) - Available via search, hosted on the glean GitHub organization
-* [Contrib](http://github.com/glean/glean-sources) - Available via search (using --contrib)
-* User - Directly available via URL
+* TODO
+  * [Contrib](http://github.com/glean/glean-sources) - Available via search (using --contrib)
+  * User - Directly available via URL
 
 ## Command line
 ```
@@ -21,7 +22,7 @@ SYNOPSIS
     glean [global options] command [command options] [arguments...]
 
 VERSION
-    0.0.12
+    0.0.13
 
 GLOBAL OPTIONS
     --help    - Show this message
