@@ -6,12 +6,20 @@ Glean targets __human curated__ datasets, with a goal of easy collaboration.
 Data is stored in the human readable data format, [TOML](https://github.com/mojombo/toml). You can think of it as Markdown for data. Each dataset is stored in a git repository, which makes it easy to track revisions, propose changes, and collaborate on datasets.
 
 ## Datasets
+Each Glean dataset is a git repository. Each file represents one piece of data (a hash of hashes). Filenames and directory structure are not significant to the data, but are useful for organization and human collaboration via Pull Requests.
+
+## Sources
 Glean datasets are available from three distinct sources:
 
 * [Core](http://github.com/glean) - Available via search, hosted on the glean GitHub organization
 * TODO
   * [Contrib](http://github.com/glean/glean-sources) - Available via search (using --contrib)
   * User - Directly available via URL
+
+## Goals
+* Easily pull commonly used datasets into projects
+* Curate data using Pull Requests
+* Preserve attribution for contributors
 
 ## Command line
 ```
