@@ -23,7 +23,7 @@ spec = Gem::Specification.new do |s|
   s.add_runtime_dependency('gli','~> 2.5')
   s.add_runtime_dependency('git','~> 1.2')
   s.add_runtime_dependency('toml', '~> 0.0.3')
-  s.add_runtime_dependency('octokit', '~> 1.24')
+  s.add_runtime_dependency('octokit', '~> 2.0')
   s.add_runtime_dependency('hashie', '~> 2.0')
   s.add_runtime_dependency('json', '~> 1.7')
 end
