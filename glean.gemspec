@@ -10,8 +10,7 @@ spec = Gem::Specification.new do |s|
   s.summary = 'A description of your project'
   s.files = `git ls-files`.split($/)
   s.require_paths << 'lib'
-  s.has_rdoc = true
-  s.rdoc_options << '--title' << 'glean' << '--main' << 'README.rdoc' << '-ri'
+  s.rdoc_options << '--title' << 'glean' << '--main' << 'README.rdoc'
   s.bindir = 'bin'
   s.executables << 'glean'
   s.add_development_dependency('rake')
