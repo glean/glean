@@ -17,10 +17,15 @@ Each file represents one piece of data (a hash of hashes). Filenames and directo
 ## Sources
 Glean datasets are available from three distinct sources:
 
-* [Core](http://github.com/glean) - Available via search, hosted on the Glean GitHub organization
-* TODO
-  * Contrib - Available via search (using --contrib)
-  * User - Directly available via URL
+1. [Core](http://github.com/glean)
+  * Available via search
+  * Hosted on the Glean GitHub organization
+1. [Contrib](https://github.com/glean/glean-contrib)
+  * Available via search using --contrib
+  * Hosted on GitHub and cataloged by Glean Contrib 
+1. User 
+  * TODO
+  * Directly available via URL
 
 ## Installation
 ```
