@@ -22,8 +22,8 @@ Glean datasets are available from three distinct sources:
   * Hosted on the Glean GitHub organization
 1. [Contrib](https://github.com/glean/glean-contrib)
   * Available via search using --contrib
-  * Hosted on GitHub and cataloged by Glean Contrib 
-1. User 
+  * Hosted on GitHub and cataloged by Glean Contrib
+1. User
   * TODO
   * Directly available via URL
 
@@ -60,6 +60,7 @@ COMMANDS
 ```
 
 ### Examples
+__Core:__
 ```
 $ glean export countries --format=json
 {"name":"Andorra","code":"ad"}
@@ -78,6 +79,14 @@ abbreviation: al
 --- !ruby/hash:Hashie::Mash
 name: Arkansas
 abbreviation: ar
+...
+```
+__Contrib:__
+```
+$ glean export lagalaxy/trophies --format=json
+{"competition":"MLS Supporters' Shield","year":1998}
+{"competition":"CONCACAF Champions' League","year":2000}
+{"competition":"Lamar Hunt U.S. Open Cup","year":2001}
 ...
 ```
 
