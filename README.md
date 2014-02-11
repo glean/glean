@@ -22,7 +22,7 @@ Glean datasets are available from three distinct sources:
   * Hosted on the Glean GitHub organization
 1. [Contrib](https://github.com/glean/glean-contrib)
   * Available via search using --contrib
-  * Hosted on GitHub and cataloged by Glean Contrib
+  * Hosted on GitHub and cataloged by [Glean Contrib](https://github.com/glean/glean-contrib)
 1. User
   * TODO
   * Directly available via URL
