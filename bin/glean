@@ -44,8 +44,10 @@ end
 desc 'Search for datasets'
 arg_name '<query>'
 command :search do |c|
+  c.switch :contrib
   c.action do |global_options,options,args|
-    Glean::Source.search(args[0]).each do |datasource|
+    source = options[:contrib] ? :contrib : :core
+    Glean::Source.search(args[0], source).each do |datasource|
       puts "#{datasource.name} -- #{datasource.description}"
     end
   end

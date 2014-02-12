@@ -1,5 +1,7 @@
 module Glean
   class Dataset
+    include Enumerable
+
     attr_reader :identifier
 
     def initialize(identifier, dir="~")

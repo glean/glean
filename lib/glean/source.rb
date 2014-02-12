@@ -8,8 +8,8 @@ module Glean
       end
     end
 
-    def self.search(query)
-      (Core.search(query) + Contrib.search(query) + User.search(query)).sort { |a, b| a.name <=> b.name }
+    def self.search(query, source)
+      self.const_get(source.capitalize).search(query).sort { |a, b| a.name <=> b.name }
     end
 
     def self.info(identifier)
