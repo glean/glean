@@ -10,7 +10,7 @@ module Glean
         Glean::Dataset.new('glean/glean-contrib').each_with_object([]) do |source, results|
           name = source.identifier
           description = "#{source.name}: #{source.description}"
-          results << SearchResult.new(name, description) if /#{query}/i =~ description
+          results << SearchResult.new(name, description) if description =~ /#{query}/i
         end
       end
     end
