@@ -19,6 +19,8 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency('rb-fsevent')
   s.add_development_dependency('rspec-nc')
   s.add_development_dependency('pry')
+  s.add_development_dependency('webmock', '~> 1.8.0')
+  s.add_development_dependency('vcr')
   s.add_runtime_dependency('gli','~> 2.5')
   s.add_runtime_dependency('git','~> 1.2')
   s.add_runtime_dependency('toml', '~> 0.0.3')
