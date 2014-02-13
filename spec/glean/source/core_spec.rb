@@ -6,7 +6,7 @@ describe "Glean::Source::Core" do
     let(:naics_codes) { "naics-codes" }
     let(:us_states) { "us-states" }
 
-    subject(:results) { Glean::Source::Core.search("america").map {|r| r.name} }
+    subject(:results) { Glean::Source::Core.search("America").map {|r| r.name} }
 
     it "should find naics-codes source" do
       expect(results).to include(naics_codes)
