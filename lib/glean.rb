@@ -10,6 +10,8 @@ require 'glean/source/core'
 require 'glean/source/contrib'
 require 'glean/source/user'
 
+require 'glean/validator'
+
 require 'glean/version'
 
 require 'git'
