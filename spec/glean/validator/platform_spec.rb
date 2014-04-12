@@ -3,7 +3,7 @@ require "spec_helper"
 describe Glean::Validator::Platform do
   subject(:platform) { described_class.new(sys_info) }
 
-  describe "unknown?" do
+  describe "#unknown?" do
     context "architecture is unknown" do
       let(:sys_info) { double(:arch => nil, :os => :unix, :impl => :osx) }
 
