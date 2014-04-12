@@ -59,7 +59,7 @@ command :validate do |c|
   c.desc "Define validator install location e.g. #{Glean::Validator::Installer::DEFAULT_INSTALL_PATH}"
   c.flag ["validator-path"], :type => String
   c.action do |global_options,options,args|
-    puts Glean::Validator.run(dataset_path: args[0], install_path: options["validator-path"])
+    puts Glean::Validator.run(:dataset_path => args[0], :install_path => options["validator-path"])
   end
 end
 
