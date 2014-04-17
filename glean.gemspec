@@ -27,4 +27,6 @@ spec = Gem::Specification.new do |s|
   s.add_runtime_dependency('octokit', '~> 2.0')
   s.add_runtime_dependency('hashie', '~> 2.0')
   s.add_runtime_dependency('json', '~> 1.7')
+  s.add_runtime_dependency('highline', '~> 1.6')
+  s.add_runtime_dependency('sysinfo', '~> 0.8')
 end
