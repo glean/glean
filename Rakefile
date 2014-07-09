@@ -3,6 +3,9 @@ require 'rake/clean'
 require 'rubygems'
 require 'rubygems/package_task'
 require 'rdoc/task'
-Bundler::GemHelper.install_tasks
+require 'rspec/core/rake_task'
 
-task :default => []
+Bundler::GemHelper.install_tasks
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec

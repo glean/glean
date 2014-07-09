@@ -8,7 +8,7 @@ describe Glean::Validator::Platform do
       let(:sys_info) { double(:arch => nil, :os => :unix, :impl => :osx) }
 
       it "true" do
-        expect(platform.unknown?).to be_true
+        expect(platform.unknown?).to be_truthy
       end
     end
 
@@ -16,7 +16,7 @@ describe Glean::Validator::Platform do
       let(:sys_info) { double(:arch => :x86_64, :os => nil, :impl => nil) }
 
       it "true" do
-        expect(platform.unknown?).to be_true
+        expect(platform.unknown?).to be_truthy
       end
     end
 
@@ -24,7 +24,7 @@ describe Glean::Validator::Platform do
       let(:sys_info) { double(:arch => :x86_64, :os => :unix, :impl => :osx) }
 
       it "false" do
-        expect(platform.unknown?).to be_false
+        expect(platform.unknown?).to be_falsey
       end
     end
   end

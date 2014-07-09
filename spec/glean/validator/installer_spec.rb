@@ -29,7 +29,7 @@ describe Glean::Validator::Installer do
 
       context "user asks installer to proceed" do
         it "asks user where to install the validator and installs it" do
-          installer.stub(:proceed?).and_return(true)
+          allow(installer).to receive(:proceed?).and_return(true)
           expect(installer).to receive(:install_where)
           expect(installer).to receive(:download)
           installer.install_to(options)
