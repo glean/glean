@@ -14,13 +14,13 @@ spec = Gem::Specification.new do |s|
   s.bindir = 'bin'
   s.executables << 'glean'
   s.add_development_dependency('rake')
-  s.add_development_dependency('rspec')
-  s.add_development_dependency('guard-rspec')
-  s.add_development_dependency('rb-fsevent')
-  s.add_development_dependency('rspec-nc')
   s.add_development_dependency('pry')
+  s.add_development_dependency('rspec', '~> 3.0')
+  s.add_development_dependency('rspec-nc', '~> 0.1')
+  s.add_development_dependency('guard-rspec', '~> 4.2')
+  s.add_development_dependency('rb-fsevent', '~> 0.9')
   s.add_development_dependency('webmock', '~> 1.8.0')
-  s.add_development_dependency('vcr')
+  s.add_development_dependency('vcr', '~> 2.9')
   s.add_runtime_dependency('gli','~> 2.5')
   s.add_runtime_dependency('git','~> 1.2')
   s.add_runtime_dependency('toml', '~> 0.0.3')
