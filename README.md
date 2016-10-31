@@ -1,3 +1,5 @@
+* Glean was a fun expriement, but is no longer maintained.*
+
 # Glean - A data management tool for humans
 
 ___Glean is experimental, expect breaking changes until v1.0.0___
